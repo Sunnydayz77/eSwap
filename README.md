@@ -1,12 +1,14 @@
-# eSwap (a.k.a. Mando-List)
+# eSwap
 
 ## Project Description
 
-**eSwap** is an e-commerce site where you can create items to swap, delete items from your own user profile, request another user's item, and swap items(update). Just like eBay you can search for things to "bid on" like electronic equipment, kitchen supplies, clothes, etc. Users will be split into 3 categories - admin, user (authenticated) and guest (unauthenticated). Guests are able to browse, but unable to bid on or upload items. Members are able to upload items for approval, and admins have the ability to update, delete and possibly edit items. Major challenges for the project may include the backend of an e-commerce site as well as overscoping on features.<br>
+**eSwap** is an e-commerce site where you can create items, delete items from your own user profile, request another user's item, and swap items. Just like eBay you can search for things to bid on("request") such as electronic equipment, kitchen supplies, clothes, etc. Users will be split into 3 categories - admin, user (authenticated) and guest (unauthenticated). Guests are able to browse, but unable to bid on or upload items. Members are able to upload items, delete items, and edit items. Major challenges for the project included tying the backend together with the front-end of an e-commerce site as well as overscoping on the features. Post-mvp features include having an email screen that directly pops up on the website to request another user's item, “favoriting”/”liking” of items, having a watchlist for favorite items, swapping of items, and stripe implementation. <br>
 
+## Relevant Instructions For Viewers:
+
+**eSwap** is an e-commerce site where you, as the user, can create items on your own user profile, delete items from your own user profile, request another user's item, and swap items. The main page has a place to sign up for an account and sign in if you are re-visiting the site. If you are a user (authenticated) then you can search for items via the main database of items that each user has, create items to give away via the "view items" tab, delete your items, and edit your items. If you are a guest (unauthenticated) then you can only view a list of items that are available via the search bar.
 
 ### MVP:
--Use React Bootstrap <br>
 -Have a minimum of 1 git commit per day per team member <br>
 -Have the frontend deployed on Surge<br>
 -Have the backend deployed on Heroku<br>
@@ -23,100 +25,74 @@
 -Include a beautiful, professional README.md (use markdown)<br>
 
 ### Post-MVP:
--Swapping of items(update portion of CRUD)
 -“Favoriting”/”Liking” option<br>
--Commenting underneath items<br>
--Messaging board/Email screen within website<br>
-_Implementing Stripe<br>
+-Email screen within website so that user can request an item<br>
+-Commenting underneath each item for enhanced/quicker user experience<br>
+-Swapping of items<br>
+-Implementing Stripe<br>
 
 
 ## Feature List 
--Login<br>
--Logout<br>
--Search bar for items being swapped<br>
--Swapping of items<br>
+-Sign Up<br>
+-Sign In<br>
+-Sign Out<br>
+-User can refresh page and still stay signed in<br>
+-Search bar to request items<br>
 -Creating items<br>
+-Retrieving items<br>
+-Updating items<br>
 -Deleting items<br>
--Requesting of item<br>
--Email screen directly on website<br>
+-Email screen directly on website to request an item<br>
 -“favoriting”/”liking” of items<br>
 -Watchlist for favorite items<br>
+-Swapping of items<br>
 -Stripe implementation<br>
 
 
-
 ## Entity Relationship Diagram (ERD) 
-_Diagram of the database tables, schemas, and relations. You can draw them by hand or try one of these useful links for ERDs:_<br>
-_-lucidchart - This is a great tool for building ERDs._<br>
-_-draw.io Another great tool for ERDs._<br>
-_-ERDPlus Yet another great tool for ERDS._<br>
 
-(in progress)
-![Entity Relationship Diagram](EntityRelationshipDiagram.jpg)
-
-
-
-## API Endpoint Documentations 
-_List of all of your servers routes, the structure of requests that you expect and the structure of responses they send._<br>
-
-(in progress)
-eBay RESTful API: <br>
-(https://developer.ebay.com/api-docs/static/ebay-rest-landing.html)<br>
+![Entity Relationship Diagram](assets/ERD.jpg)
 
 ### Items Database:
 -Item ID (int)<br>
 -Item Name (String)<br>
 -Description (String)<br>
--Name(of owner) (String) one to many?<br>
+-Name(of owner) (String)<br>
 -Date Uploaded (new Date)<br>
 -Availability (Boolean)<br>
 
 ### Users Database:
 -User ID (int)<br>
 -User Name (String)<br>
--User Description/Role (admin/member/guest?) - String<br>
+-User Description/Role (admin/member/guest) (String) <br>
 -Password<br>
 -Date joined (new Date)<br>
-
 
 ## Wireframes 
 
 https://marvelapp.com/a9jaafd/screen/67084205<br>
 
-![Initial Wireframe](InitialWireframe.png)
+![Initial Wireframe](assets/InitialWireframe.png)
 
 ## Component Hierarchy 
-_Wireframes should be broken into components which then should be described in a component hierarchy._<br>
 
-(in progress) <br>
-Navbar<br>
--->Home <br>
--->Trade<br>
--->Support<br>
--->Search<br>
+### Initial Component Hierarchy
+
+Unauthenticated Navbar<br>
 -->Sign Up<br>
 -->Sign In<br>
 
-App Container<br>
-|Items<br>
-  -->Product name<br>
-  -->Value<br>
-  -->Profile picture<br>
-  -->Category_id<br>
-|Floating Footer<br>
-  -->Add item button<br> 
-  -->Homepage button<br> 
-  -->Back button<br>
-|Footer<br> 
-  -->Branding copyright<br> 
-  -->Social media links<br> 
-  -->NavLinks<br> 
-
-
+Authenticated NavBar<br>
+-->Home <br>
+-->Search Items<br>
+-->View User Items<br>
+-->Sign Out<br>
 
 ## List Dependencies 
 
 eBay RESTful API: (https://developer.ebay.com/api-docs/static/ebay-rest-landing.html)<br>
+
+Craigslist API: (https://github.com/mislam/craigslist-api)<br>
 
 Unsplash for images: (https://unsplash.com/) <br>
 
@@ -129,8 +105,16 @@ MongoDb Atlas: (https://www.mongodb.com/cloud/atlas) <br>
 
 ## Live Links
 
-Surge(front-end): (eSwap.surge.sh) <br>
+Surge(front-end): (http://e-swap.surge.sh/) <br>
 
 Heroku(Back-end): (https://mando-list.herokuapp.com/) <br>
 
-Db Atlas (database): () <br>
+Db Atlas (database): ![Successful Deployment of Mongodb Atlas Database](assets/Successful_Deployment_of_Mongodb_Atlas_Database.png) <br>
+
+## Quick Runthrough of Website Sign Up
+
+![Sign Up Video](assets/SignUp.mov)<br>
+
+## Quick Runthrough of Website Sign In
+
+![Sign In Video](assets/SignIn.mov)<br>

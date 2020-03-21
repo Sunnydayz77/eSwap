@@ -1,5 +1,16 @@
 import api from './apiConfig'
 
+export const getUserByID = async (id) => {
+    try {
+        const resp = await api.get(`/users/${id}`)
+        console.log(resp.data);
+        return resp.data
+    } catch (error) {
+        throw error
+    }
+}
+
+
 export const getItems = async () => {
     try {
         const resp = await api.get('/items')
@@ -41,7 +52,9 @@ export const deleteItem = async id => {
     try {
         const resp = await api.delete(`/items/${id}`)
         return resp.data
+			  console.log('deleted')
     } catch (error) {
         throw error
+			  console.log('not deleted')
     }
 }

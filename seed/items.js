@@ -9,20 +9,94 @@ const faker = require('faker')
 const main = async () => {
     const user1 = await User.find({ username: 'Joe'})
     const user2 = await User.find({ username: 'Schmo'})
+    console.log(user1)
+    console.log(user2)
 
     const items = [
-        {
-            name: faker.commerce.product(),
-            description: faker.lorem.sentence(),
-            link: faker.internet.url(),
+          {
+              name: 'Salad',
+              description: 'Salad description',
+              link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              user_id: user1[0]._id
+          },
+          {
+              name: 'Car',
+              description: 'Car description',
+              link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              user_id: user2[0]._id
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             user_id: user1[0]._id
-        },
-        {
-            name: faker.commerce.product(),
-            description: faker.lorem.sentence(),
-            link: faker.internet.url(),
+          },
+          {
+              name: 'Car',
+              description: 'Car description',
+              link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              user_id: user2[0]._id
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user1[0]._id
+          },
+          {
+              name: 'Car',
+              description: 'Car description',
+              link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              user_id: user2[0]._id
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user1[0]._id
+          },
+          {
+              name: 'Car',
+              description: 'Car description',
+              link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+              user_id: user2[0]._id
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user1[0]._id
+          },
+          {
+            name: 'Car',
+            description: 'Car description',
+            link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
             user_id: user2[0]._id
-        }
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user1[0]._id
+          },
+          {
+            name: 'Car',
+            description: 'Car description',
+            link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user2[0]._id
+          },
+          {
+            name: 'Salad',
+            description: 'Salad description',
+            link: 'https://images.pexels.com/photos/5938/food-salad-healthy-lunch.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user1[0]._id
+          },
+          {
+            name: 'Car',
+            description: 'Car description',
+            link: 'https://images.pexels.com/photos/170811/pexels-photo-170811.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+            user_id: user2[0]._id
+          }
       ]
 
     await Item.insertMany(items)

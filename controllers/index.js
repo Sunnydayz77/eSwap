@@ -60,6 +60,20 @@ const signIn = async (req, res) => {
     }
 }
 
+const verifyUser = (req, res) => {
+  // console.log('verifyUser')
+try {
+  const token = req.headers.authorization.split(" ")[1];
+  // console.log('TOKEN_KEY', TOKEN_KEY);
+  const user = jwt.verify(token, TOKEN_KEY);
+  // console.log(user)
+  res.locals = user;
+  res.json({ user: res.locals });
+} catch (e) {
+  res.status(401).send('Not Authorized');
+}
+}
+
 const changePassword = async (req, res) => { }
 
 //item functions
@@ -115,6 +129,7 @@ const updateItem = async (req, res) => {
 }
 
 const deleteItem = async (req, res) => {
+	console.log('delete')
     try {
         const { id } = req.params;
         const deleted = await Item.findByIdAndDelete(id)
@@ -179,9 +194,12 @@ const getAllUsers = async (req, res) => {
 }
 
 const getUserById = async (req, res) => {
+    console.log('here')
     try {
         const { id } = req.params;
+        console.log(typeof(id), id)
         const user = await User.findById(id)
+        console.log(user);
         if (user) {
             return res.status(200).json(user)
         }
@@ -237,5 +255,6 @@ module.exports = {
     getAllUsers,
     getUserById,
     updateUser,
-    deleteUser
+    deleteUser,
+    verifyUser
 }

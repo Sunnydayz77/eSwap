@@ -2,15 +2,17 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 import Home from '../screens/Home'
 import Landing from '../screens/Landing'
-import SignIn from '../screens/SignIn.js'
+import SignIn from '../screens/SignIn'
 import SignOut from '../screens/SignOut'
-import SignUp from '../screens/SignUp';
+import SignUp from '../screens/SignUp'
 import Item from '../screens/Item'
 import Items from '../screens/Items'
 import ItemCreate from '../screens/ItemCreate'
 import ItemEdit from '../screens/ItemEdit'
+import SearchPage from '../screens/SearchPage'
 import AuthenticatedRoute from './AuthenticatedRoute'
-const Routes = ({ user, items, setUser, clearUser, addItem }) => (
+
+const Routes = ({ user, items, setUser, clearUser, addItem, deleteItemFromList }) => (
     <Switch>
         <Route
             exact
@@ -30,6 +32,11 @@ const Routes = ({ user, items, setUser, clearUser, addItem }) => (
             path="/sign-out"
             render={props => <SignOut {...props} clearUser={clearUser} user={user} />}
         />
+        <Route
+            exact
+            path="/search"
+            render={props => <SearchPage {...props} clearUser={clearUser} items={items} user={user} />}
+				/>
         <AuthenticatedRoute
             exact
             path="/items"
@@ -40,7 +47,7 @@ const Routes = ({ user, items, setUser, clearUser, addItem }) => (
             exact
             path="/items/:id"
             user={user}
-            render={props => <Item {...props} />}
+        render={props => <Item {...props} deleteItemFromList={deleteItemFromList} />}
         />
         <AuthenticatedRoute
             exact

@@ -23,11 +23,14 @@ class Item extends Component {
     }
 
     destroy = () => {
-        deleteItem(this.state.item._id)
-            .then(() => this.setState({ deleted: true }))
-            .catch(console.error)
+      deleteItem(this.state.item._id)
+        .then(() => {
+          this.props.deleteItemFromList(this.state.item._id);this.setState({ deleted: true }); 
+    })
+              .catch(console.error)
     }
-
+  
+  
     render() {
         const { item, deleted } = this.state
 
@@ -48,26 +51,31 @@ class Item extends Component {
 
         return (
             <Layout>
-                <div className="item">
+                <div className="seeMoreItem">
                     <Link to="/items">
                         <span> Back to all items</span>
                     </Link>
-                    <h4>{item.title}</h4>
-                    <p>Link: {item.link}</p>
-                    <div className="buttons">
-                        <button className="danger" onClick={this.destroy}>
-                            Delete Item
-                        </button>
-                        <button
-                            className="edit"
-                            onClick={() =>
-                                this.props.history.push(
-                                    `/items/${this.props.match.params.id}/edit`
-                                )
-                            }
-                        >
-                            Edit
-                        </button>
+                      <hr></hr>
+                      <h4>{item.name}</h4>
+                      <img src={item.link} alt="img link" width="350px" height="350px" />
+                      <p>Description: {item.description}</p>
+                      <p>Link: {item.link}</p>
+                      <p>User Id: {item.user_id}</p>
+                      <div className="buttons">
+                    <button className="danger" onClick={this.destroy}>
+                        Delete Item
+                    </button>
+                    <br></br>
+                    <button
+                        className="edit"
+                        onClick={() =>
+                            this.props.history.push(
+                                `/items/${this.props.match.params.id}/edit`
+                            )
+                        }
+                    >
+                        Edit Item
+                    </button>
                     </div>
                 </div>
             </Layout>
