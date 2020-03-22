@@ -29,7 +29,7 @@ class ItemCreate extends Component {
         if (res.status === 201) {
             this.props.addItem(res.data)
             this.setState({ 
-                createdItem: res.data
+              createdItem: {...res.data, user_id:this.props.user.id}
             })
             this.props.history.push('/items')
         }
@@ -41,6 +41,8 @@ class ItemCreate extends Component {
         if (createdItem) {
             return <Redirect to={`/items`} />
         }
+      
+    console.log(this.props.user)
         return (
             <Layout>
                 <ItemForm

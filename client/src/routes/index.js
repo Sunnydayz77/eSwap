@@ -58,7 +58,7 @@ const Routes = ({ user, items, setUser, clearUser, addItem, deleteItemFromList }
         <AuthenticatedRoute
             user={user}
             path="/create"
-            render={props => <ItemCreate {...props} addItem={addItem} />}
+            render={props => <ItemCreate {...props} addItem={addItem} user={user}/>}
         />
     </Switch>
 )
