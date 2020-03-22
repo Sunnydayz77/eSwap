@@ -107,6 +107,8 @@ MongoDb Atlas: (https://www.mongodb.com/cloud/atlas) <br>
 
 Surge(front-end): (http://e-swap.surge.sh/) <br>
 
-Heroku(Back-end): (https://mando-list.herokuapp.com/) <br>
+Heroku(Back-end): (https://e-swap-deployment.herokuapp.com/) <br>
+Heroku Users: (https://e-swap-deployment.herokuapp.com/api/users) <br>
+Heroku Items: (https://e-swap-deployment.herokuapp.com/api/items) <br>
 
 Db Atlas (database): ![Successful Deployment of Mongodb Atlas Database](assets/Successful_Deployment_of_Mongodb_Atlas_Database.png) <br>
