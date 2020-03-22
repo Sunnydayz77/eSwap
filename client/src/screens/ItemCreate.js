@@ -11,7 +11,7 @@ class ItemCreate extends Component {
             item: {
                 name: '',
                 description: '',
-                link: ''
+                link: '',
             },
             createdItem: null
         }
@@ -23,17 +23,17 @@ class ItemCreate extends Component {
     }
   
     handleSubmit = async event => {
-        event.preventDefault()
-        
-        const res = await createItem(this.state.item)
-        if (res.status === 201) {
-            this.props.addItem(res.data)
-            this.setState({ 
-              createdItem: {...res.data, user_id:this.props.user.id}
-            })
-            this.props.history.push('/items')
-        }
-    }
+      event.preventDefault()
+      
+      const res = await createItem({...this.state.item, user_id:this.props.user.id && this.props.user.id})
+      if (res.status === 201) {
+          this.props.addItem(res.data)
+          this.setState({ 
+              createdItem: res.data
+          })
+          this.props.history.push('/items')
+      }
+  }
     render() {
         const { handleChange, handleSubmit } = this
         const { createdItem, item } = this.state
