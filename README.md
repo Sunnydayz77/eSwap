@@ -110,11 +110,3 @@ Surge(front-end): (http://e-swap.surge.sh/) <br>
 Heroku(Back-end): (https://mando-list.herokuapp.com/) <br>
 
 Db Atlas (database): ![Successful Deployment of Mongodb Atlas Database](assets/Successful_Deployment_of_Mongodb_Atlas_Database.png) <br>
-
-## Quick Runthrough of Website Sign Up
-
-![Sign Up Video](assets/SignUp.mov)<br>
-
-## Quick Runthrough of Website Sign In
-
-![Sign In Video](assets/SignIn.mov)<br>
