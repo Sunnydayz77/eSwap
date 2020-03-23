@@ -60,7 +60,7 @@ class Item extends Component {
                         <span> Back to all items</span>
                     </Link>
                       <hr></hr>
-                    <h4>{item.name}</h4>
+                      <h4>{item.name}</h4>
                       <img src={item.link} alt="img link" width="350px" height="350px" />
                       <p>Description: {item.description}</p>
                       <p>Link: {item.link}</p>
