@@ -4,6 +4,7 @@ import ItemForm from '../components/shared/ItemForm'
 import Layout from '../components/shared/Layout'
 import { createItem } from '../services/items'
 
+
 class ItemCreate extends Component {
     constructor(props) {
         super(props)
@@ -11,7 +12,7 @@ class ItemCreate extends Component {
             item: {
                 name: '',
                 description: '',
-                link: ''
+                link: '',
             },
             createdItem: null
         }
@@ -23,17 +24,18 @@ class ItemCreate extends Component {
     }
 
     handleSubmit = async event => {
-        event.preventDefault()
-
-        const res = await createItem(this.state.item)
-        if (res.status === 201) {
-            this.props.addItem(res.data)
-            this.setState({
-                createdItem: res.data
-            })
-            this.props.history.push('/items')
-        }
-    }
+      event.preventDefault()
+      
+      const res = await createItem({...this.state.item, user_id:this.props.user.id && this.props.user.id})
+      if (res.status === 201) {
+          this.props.addItem(res.data)
+          this.setState({ 
+              createdItem: res.data
+          })
+          this.props.history.push('/items')
+      }
+  }
+    
     render() {
         const { handleChange, handleSubmit } = this
         const { createdItem, item } = this.state
@@ -41,6 +43,8 @@ class ItemCreate extends Component {
         if (createdItem) {
             return <Redirect to={`/items`} />
         }
+      
+    console.log(this.props.user)
         return (
             <Layout>
                 <ItemForm
