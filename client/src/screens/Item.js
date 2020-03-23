@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Layout from '../components/shared/Layout'
 import { getItemById, deleteItem } from '../services/items'
+import { getUserByID } from '../services/items'
 
 class Item extends Component {
     constructor(props) {
@@ -34,6 +35,9 @@ class Item extends Component {
     render() {
         const { item, deleted } = this.state
 
+        const userInfo = async()=> await getUserByID(item.user_id)
+        console.log(userInfo)
+      
         if (!item) {
             return <p>Loading...</p>
         }
@@ -56,7 +60,7 @@ class Item extends Component {
                         <span> Back to all items</span>
                     </Link>
                       <hr></hr>
-                      <h4>{item.name}</h4>
+                    <h4>{item.name}</h4>
                       <img src={item.link} alt="img link" width="350px" height="350px" />
                       <p>Description: {item.description}</p>
                       <p>Link: {item.link}</p>
