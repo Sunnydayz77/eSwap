@@ -19,7 +19,7 @@ class AppContainer extends Component {
     }
   }
 
-  async componentDidMount() { 
+  async componentDidMount() {
     const user = await verifyToken();
     if (user) {
       this.setState({ user })
