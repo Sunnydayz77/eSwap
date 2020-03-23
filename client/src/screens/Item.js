@@ -36,7 +36,6 @@ class Item extends Component {
         const { item, deleted } = this.state
 
         const userInfo = async()=> await getUserByID(item.user_id)
-        console.log(userInfo)
       
         if (!item) {
             return <p>Loading...</p>

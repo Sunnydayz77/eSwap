@@ -62,31 +62,6 @@ export class SignUp extends Component {
     render() {
         const { email, username, password, passwordConfirmation } = this.state;
         return (
-            // <Container className="mando-sign-up">
-            //     <Navbar />
-            //     <h4>eSwap Sign Up</h4>
-            //     <Form onSubmit={this.onSignUp}>
-            //         <Form.Group controlId="formBasicUsername">
-            //             {/* <Form.Label>Username</Form.Label> */}
-            //             <Form.Control required type="text" name="username" id="" value={username} onChange={this.handleChange} placeholder="Username" />
-            //         </Form.Group>
-            //         <Form.Group controlId="formBasicEmail">
-            //             {/* <Form.Label>Email address</Form.Label> */}
-            //             <Form.Control required type="email" name="email" value={email} onChange={this.handleChange} placeholder="Enter email" />
-            //         </Form.Group>
-            //         <Form.Group controlId="formBasicPassword">
-            //             {/* <Form.Label>Password</Form.Label> */}
-            //             <Form.Control required type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
-            //         </Form.Group>
-            //         <Form.Group controlId="formBasicPasswordConfirmation">
-            //             {/* <Form.Label>Password Confirmation</Form.Label> */}
-            //             <Form.Control required type="password" name="passwordConfirmation" value={password} onChange={this.handleChange} placeholder="Confirm Password" />
-            //         </Form.Group>
-            //         {this.renderError()}
-            //     </Form>
-            //     <p>By creating an account, you agree to our   <Link to="/">terms</Link></p>
-            //     <p>Already have an account?  <Link to="/sign-in">Sign In</Link></p>
-            // </Container>
             <div className="row">
                 <div className="form-container">
               <h3>Sign Up</h3>

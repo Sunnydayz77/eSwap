@@ -60,23 +60,6 @@ class SignIn extends Component {
         const { username, password } = this.state
 
         return (
-            // <Container className="mando-sign-in">
-            //     <Navbar />
-            //     <h4>eSwap Sign In</h4>
-            //     <Form onSubmit={this.onSignIn}>
-            //         <Form.Group controlId="formBasicUsername">
-            //             {/* <Form.Label>Username</Form.Label> */}
-            //             <Form.Control required type="text" name="username" id="" value={username} onChange={this.handleChange} placeholder="Username" />
-            //         </Form.Group>
-            //         <Form.Group controlId="formBasicPassword">
-            //             {/* <Form.Label>Password</Form.Label> */}
-            //             <Form.Control required type="password" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
-            //         </Form.Group>
-            //         {this.renderError()}
-            //     </Form>
-            //     <p>By creating an account, you agree to our   <Link to="/">terms</Link></p>
-            //     <p>Don't have an account?  <Link to="/sign-up">Sign Up</Link></p>
-            // </Container>
             <div className="row">
                 <div className="form-container">
               <h3>Sign In</h3>

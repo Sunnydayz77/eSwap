@@ -32,9 +32,6 @@ const signUp = async (req, res) => {
         const token = jwt.sign(payload, TOKEN_KEY)
         return res.status(201).json({ user, token })
     } catch (error) {
-        console.log(
-            'You made it to the signUp controller, but there was an error :('
-        )
         return res.status(400).json({ error: error.message })
     }
 }
@@ -61,12 +58,11 @@ const signIn = async (req, res) => {
 }
 
 const verifyUser = (req, res) => {
-  // console.log('verifyUser')
 try {
   const token = req.headers.authorization.split('')[1];
-  // console.log('TOKEN_KEY', TOKEN_KEY);
+
   const user = jwt.verify(token, TOKEN_KEY);
-  // console.log(user)
+ 
   res.locals = user;
   res.json({ user: res.locals });
 } catch (e) {
@@ -84,7 +80,6 @@ const createItem = async (req, res) => {
         await item.save()
         return res.status(201).json(item)
     } catch (error) {
-        console.log(error)
         return res.status(500).json({ error: error.message })
     }
 }
@@ -129,7 +124,6 @@ const updateItem = async (req, res) => {
 }
 
 const deleteItem = async (req, res) => {
-	console.log('delete')
     try {
         const { id } = req.params;
         const deleted = await Item.findByIdAndDelete(id)
@@ -194,12 +188,10 @@ const getAllUsers = async (req, res) => {
 }
 
 const getUserById = async (req, res) => {
-    console.log('here')
     try {
         const { id } = req.params;
-        console.log(typeof(id), id)
         const user = await User.findById(id)
-        console.log(user);
+      
         if (user) {
             return res.status(200).json(user)
         }

@@ -2,7 +2,6 @@ import React from 'react';
 import { Jumbotron, Button } from 'react-bootstrap';
 
 const Home = (props) => {
-    console.log(props);
     return (
         <div className="homepage">
             <div className="top-img"></div>

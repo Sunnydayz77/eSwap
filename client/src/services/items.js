@@ -3,7 +3,6 @@ import api from './apiConfig'
 export const getUserByID = async (id) => {
     try {
         const resp = await api.get(`/users/${id}`)
-        console.log(resp.data);
         return resp.data
     } catch (error) {
         throw error
@@ -32,7 +31,6 @@ export const getItemById = async id => {
 export const createItem = async item => {
     try {
         const resp = await api.post('/items', item)
-        console.log(resp.data)
         return resp
     } catch (error) {
         throw error
@@ -52,9 +50,7 @@ export const deleteItem = async id => {
     try {
         const resp = await api.delete(`/items/${id}`)
         return resp.data
-			  console.log('deleted')
     } catch (error) {
         throw error
-			  console.log('not deleted')
     }
 }

@@ -3,8 +3,6 @@ const User = require('../models/user')
 
 db.on('error', console.error.bind(console, 'MongoDB connection error:'))
 
-// const faker = require('faker')
-
 const main = async () => {
 
     const users = [

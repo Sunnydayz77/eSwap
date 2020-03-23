@@ -44,7 +44,6 @@ class ItemCreate extends Component {
             return <Redirect to={`/items`} />
         }
       
-    console.log(this.props.user)
         return (
             <Layout>
                 <ItemForm
