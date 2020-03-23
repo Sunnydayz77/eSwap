@@ -21,8 +21,8 @@ const unauthenticatedOptions = (
 const Header = ({ user }) => (
     <Navbar>
         <div className="nav">
+            {user && <span className="navbar-text">Welcome, {user.email}</span>}
             {user ? authenticatedOptions : unauthenticatedOptions}
-        {user && <span className="navbar-text">Welcome, {user.email}</span>}
         </div>
     </Navbar>
 )
