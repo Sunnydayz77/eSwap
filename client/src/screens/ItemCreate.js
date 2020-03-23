@@ -4,6 +4,7 @@ import ItemForm from '../components/shared/ItemForm'
 import Layout from '../components/shared/Layout'
 import { createItem } from '../services/items'
 
+
 class ItemCreate extends Component {
     constructor(props) {
         super(props)

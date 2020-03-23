@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link, Redirect } from 'react-router-dom'
 import Layout from '../components/shared/Layout'
 import { getItemById, deleteItem } from '../services/items'
+import { getUserByID } from '../services/items'
 
 class Item extends Component {
     constructor(props) {
@@ -34,6 +35,9 @@ class Item extends Component {
     render() {
         const { item, deleted } = this.state
 
+        const userInfo = async()=> await getUserByID(item.user_id)
+        console.log(userInfo)
+      
         if (!item) {
             return <p>Loading...</p>
         }
