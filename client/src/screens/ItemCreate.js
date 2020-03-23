@@ -22,7 +22,7 @@ class ItemCreate extends Component {
         const editedItem = Object.assign(this.state.item, updatedField)
         this.setState({ item: editedItem })
     }
-  
+
     handleSubmit = async event => {
       event.preventDefault()
       
@@ -35,6 +35,7 @@ class ItemCreate extends Component {
           this.props.history.push('/items')
       }
   }
+    
     render() {
         const { handleChange, handleSubmit } = this
         const { createdItem, item } = this.state
